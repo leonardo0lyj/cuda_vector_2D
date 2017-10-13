@@ -1,0 +1,15 @@
+#!/bin/bash
+# request Job Name
+#PBS -N run_Chief2
+# request all processors/cores on every nodes
+#PBS -l nodes=chief2:ppn=40:gpus=2
+# combine PBS standard output and error files
+#PBS -j oe 
+
+#change to the directory where you submitted the job 
+cd $PBS_O_WORKDIR
+#include the full path to the name of your MPI program
+./vectorTruncat
+#./hostname
+
+exit 0
